@@ -1,0 +1,19 @@
+html {
+	background: url("btc2.png");
+	background-repeat: repeat;
+	/* padding-bottom: 500px; */
+	background-size: 80px;
+
+}
+
+body {
+	background: black;
+	max-width: 800px;
+	margin: 100px auto 200px auto;
+	text-align: center;
+	color: white;
+}
+
+a {
+	color: red;
+}
