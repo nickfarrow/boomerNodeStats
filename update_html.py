@@ -1,3 +1,4 @@
+#!/usr/bin/python
 from bitcoinrpc.authproxy import AuthServiceProxy
 import time
 import RPC_PASSWORDS as rp
