@@ -12,7 +12,7 @@ while True:
                                                                                ))
         info = rpc_connection.getblockchaininfo()
 
-        print(info)
+        #print(info)
 
         with open("index.html", 'r') as f:
             siteContents = f.read()
@@ -35,15 +35,18 @@ while True:
 
 
         try:
-            subprocess.call(["rsync", "-a", "./index.html", "root@202.182.97.180:/var/www/nodeStats/index.html"])
+            subprocess.call(["rsync", "-a", ".", "root@202.182.97.180:/var/www/nodeStats/"])
         except Exception as e:
             print("rsync error: " + e)
 
+        print(now.strftime("%Y-%m-%d %H:%M:%S"))
         print("sleeping")
 
 
 
     except Exception as e:
         print("main error: " + e)
-
+    
+    
     time.sleep(60)
+
