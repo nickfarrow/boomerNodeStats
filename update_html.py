@@ -8,7 +8,7 @@ import subprocess
 siteDir = "/home/pi/repos/boomerNodeStats/"
 
 def updatePricePage():
-    ratehtml = subprocess.check_output(["curl", "rate.sx/btc"])
+    ratehtml = subprocess.check_output(["curl", "-s", "rate.sx/btc"])
     html = ratehtml.split("<pre>")[1].split("begin")[0]
 
     with open(siteDir + "price.html", 'r') as f:
@@ -50,10 +50,10 @@ while True:
         with open(siteDir + "index.html", 'w') as f:
             f.write(preContents + splitLine + middle + splitLine + postContents)
 
-        try:
-            updatePricePage()
-        except:
-            continue
+        # try:
+        updatePricePage()
+        # except:
+        #     continue
 
         try:
             subprocess.call(["rsync", "-a", siteDir, "root@202.182.97.180:/var/www/nodeStats/"])
