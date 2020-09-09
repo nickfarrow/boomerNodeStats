@@ -3,12 +3,13 @@ html {
 	background-repeat: repeat;
 	/* padding-bottom: 500px; */
 	background-size: 80px;
-
 }
 
 body {
 	background: black;
-	max-width: 800px;
+	width: 1200px;
+	/* width: 85%; */
+	/* margin: 100px 100px 100px 100px; */
 	margin: 100px auto 200px auto;
 	text-align: center;
 	color: white;
