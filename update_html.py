@@ -4,11 +4,13 @@ import time
 import datetime
 import RPC_PASSWORDS as rp
 import subprocess
+import urllib
 
 siteDir = "/home/pi/repos/boomerNodeStats/"
 
 def updatePricePage():
-    ratehtml = subprocess.check_output(["curl", "-s", "rate.sx/btc"])
+    ratehtml = urllib.urlopen("https://rate.sx/btc").read()
+
     html = ratehtml.split("<pre>")[1].split("begin")[0]
 
     with open(siteDir + "price.html", 'r') as f:
